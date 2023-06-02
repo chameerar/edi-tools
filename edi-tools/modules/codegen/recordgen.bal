@@ -7,9 +7,22 @@ map<BalType> ediToBalTypes = {
     "float": BFLOAT
 };
 
-type GenContext record {|
-    map<BalRecord> typeRecords = {};
+public type EdiData record {|
+    string ediName;
+    string mainRecordName;
+    edi:EdiSchema schema;
+    map<BalRecord> generatedRecords = {};
+|};
+
+public type GenContext record {|
+    // map<BalRecord> typeRecords = {};
+    map<BalRecord> segmentRecords = {}; // these will be always shared
+    map<BalRecord> nonSegmentRecords = {};
+    map<EdiData> roots = {};
+    map<BalRecord> sharedNonSegmentRecords = {};
     map<int> typeNumber = {};
+    map<BalRecord> currentEdiRecords = {};
+    string currentEdiName = "";
 |};
 
 # Generates all Ballerina records required to represent EDI data in the given schema and writes those to a file.
@@ -18,9 +31,14 @@ type GenContext record {|
 # + outpath - Path of the file to write generated records. This should be a .bal file.
 # + return - Returns error if the record generation is not successfull
 public function generateCodeToFile(edi:EdiSchema mapping, string outpath) returns error? {
-    BalRecord[] records = generateCode(mapping);
+    GenContext context = {currentEdiName: mapping.name, currentEdiRecords: {}};
+    generateCode(mapping.name, mapping, context);
     string sRecords = "";
-    foreach BalRecord rec in records {
+    foreach BalRecord rec in context.segmentRecords {
+        sRecords += rec.toString() + "\n";
+    }
+    BalRecord[] nonSegmentRecords = context.currentEdiRecords.toArray();
+    foreach BalRecord rec in nonSegmentRecords {
         sRecords += rec.toString() + "\n";
     }
     _ = check io:fileWriteString(outpath, sRecords);
@@ -29,16 +47,16 @@ public function generateCodeToFile(edi:EdiSchema mapping, string outpath) return
 # Generates all Ballerina records required to represent EDI data in the given schema.
 #
 # + mapping - EDI schema for which records need to be generated
-# + return - Returns an array of generated records. Error if the generation is not successfull.
-public function generateCode(edi:EdiSchema mapping) returns BalRecord[] {
-    GenContext context = {};
-    _ = generateRecordForUnits(mapping.segments, mapping.name, context);
-    return context.typeRecords.toArray();
-}
-
-function generateRecordForSegmentGroup(edi:EdiSegGroupSchema groupmap, GenContext context) returns BalRecord {
-    string sgTypeName = generateTypeName(groupmap.tag, context);
-    return generateRecordForUnits(groupmap.segments, sgTypeName, context);
+# + context - Context for record generation. Can contain the record generation context of 
+# previously processed EDI schemas, when processing an EDI schema collection (i.e. libgen).
+public function generateCode(string ediName, edi:EdiSchema mapping, GenContext context) {
+    context.currentEdiRecords = {};
+    BalRecord rootRecord = generateRecordForUnits(mapping.segments, mapping.name, context);
+    context.currentEdiRecords[rootRecord.name] = rootRecord;
+    context.roots[mapping.name] = {ediName, 
+            mainRecordName: rootRecord.name, 
+            schema: mapping,
+            generatedRecords: context.currentEdiRecords};
 }
 
 function generateRecordForUnits(edi:EdiUnitSchema[] umaps, string typeName, GenContext context) returns BalRecord {
@@ -52,17 +70,84 @@ function generateRecordForUnits(edi:EdiUnitSchema[] umaps, string typeName, GenC
             sgrec.addField(srec, umap.tag, umap.maxOccurances != 1, umap.minOccurances == 0);
         }
     }
-    context.typeRecords[typeName] = sgrec;
     return sgrec;
+}
+
+function generateRecordForSegmentGroup(edi:EdiSegGroupSchema groupmap, GenContext context) returns BalRecord {
+    BalRecord? existingRecord = getMatchingNSRecord(groupmap, context);
+    if existingRecord is BalRecord {
+        if !context.sharedNonSegmentRecords.hasKey(existingRecord.name) {
+            context.sharedNonSegmentRecords[existingRecord.name] = existingRecord;
+        }
+        return existingRecord;
+    }
+    string sgTypeName = generateTypeName(groupmap.tag, context);
+    BalRecord segGroupRecord = generateRecordForUnits(groupmap.segments, sgTypeName, context);
+    context.currentEdiRecords[segGroupRecord.name] = segGroupRecord;
+    context.nonSegmentRecords[segGroupRecord.name] = segGroupRecord;
+    return segGroupRecord;
+}
+
+function getMatchingNSRecord(edi:EdiSegGroupSchema schema, GenContext context) returns BalRecord? {
+    int? maxTypeNumber = context.typeNumber[schema.tag];
+    if maxTypeNumber is () {
+        return ();
+    }
+    BalRecord? r = ();
+    foreach int i in 1...maxTypeNumber {
+        string recordName = startWithUppercase(schema.tag + (i == 1 ? "" : i.toString()) + "_GType");
+        r = context.nonSegmentRecords[recordName];
+        if r is () {
+            continue;
+        }
+        if matchSchemaWithRecord(schema, r) {
+            return r;
+        }
+    }
+    return ();
+}
+
+function matchSchemaWithRecord(edi:EdiSegGroupSchema schema, BalRecord balRecord) returns boolean {
+    if schema.segments.length() != balRecord.fields.length() {
+        return false;
+    }
+    BalField[] bFields = balRecord.fields.slice(0);
+    foreach edi:EdiUnitSchema unitSchema in schema.segments {
+        boolean fieldMatched = false;
+        foreach int i in 0...(bFields.length() - 1) {
+            BalField bField = bFields[i];
+            BalType fieldType = bField.btype;
+            if fieldType is BalBasicType {
+                return false;
+            }
+            if unitSchema is edi:EdiSegSchema {
+                if startWithUppercase(unitSchema.tag + "_Type") == fieldType.name {
+                    fieldMatched = true;
+                    _ = bFields.remove(i);
+                    break;
+                }
+            } else {
+                if startWithUppercase(unitSchema.tag + "_GType") == fieldType.name && 
+                    matchSchemaWithRecord(unitSchema, fieldType) {
+                    _ = bFields.remove(i);
+                    fieldMatched = true;
+                    break;
+                }
+            }    
+        }
+        if !fieldMatched {
+            return false;
+        }
+    }
+    return true;
 }
 
 function generateRecordForSegment(edi:EdiSegSchema segmap, GenContext context) returns BalRecord {
     string sTypeName = startWithUppercase(segmap.tag + "_Type");
-    BalRecord? erec = context.typeRecords[sTypeName];
+    BalRecord? erec = context.segmentRecords[sTypeName];
     if erec is BalRecord {
         return erec;
     }
-
     BalRecord srec = new (sTypeName);
     foreach edi:EdiFieldSchema emap in segmap.fields {
         BalType? balType = ediToBalTypes[emap.dataType];
@@ -74,7 +159,7 @@ function generateRecordForSegment(edi:EdiSegSchema segmap, GenContext context) r
             srec.addField(balType, emap.tag, emap.repeat, !emap.required);
         }
     }
-    context.typeRecords[sTypeName] = srec;
+    context.segmentRecords[srec.name] = srec;
     return srec;
 }
 
@@ -87,7 +172,7 @@ function generateRecordForComposite(edi:EdiFieldSchema emap, GenContext context)
             crec.addField(balType, submap.tag, false, !submap.required);
         }
     }
-    context.typeRecords[cTypeName] = crec;
+    context.currentEdiRecords[cTypeName] = crec;
     return crec;
 }
 
@@ -106,7 +191,7 @@ function generateTypeName(string tag, GenContext context) returns string {
     if num is int {
         int newNum = num + 1;
         context.typeNumber[tag] = newNum;
-        return startWithUppercase(string `${tag}${newNum}_GType`);
+        return startWithUppercase(string `${tag}_${newNum}_GType`);
     } else {
         int newNum = 1;
         context.typeNumber[tag] = newNum;

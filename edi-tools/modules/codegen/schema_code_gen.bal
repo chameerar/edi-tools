@@ -1,11 +1,21 @@
 import ballerina/edi;
 import ballerina/io;
 
-public function generateCodeForSchema(json schema, string outputPath) returns error? {
+public function generateCodeForSchema(string ediName, json schema, GenContext context) returns error? {
     edi:EdiSchema ediSchema = check edi:getSchema(schema);
-    BalRecord[] records = generateCode(ediSchema);
+    generateCode(ediName, ediSchema, context);    
+}
+
+public function writeCodeForSchema(json schema, string outputPath) returns error? {
+    edi:EdiSchema ediSchema = check edi:getSchema(schema);
+    GenContext context = {currentEdiName: ediSchema.name, currentEdiRecords: {}};
+    generateCode(ediSchema.name, ediSchema, context);
     string recordsString = "";
-    foreach BalRecord rec in records {
+    foreach BalRecord rec in context.segmentRecords {
+        recordsString += rec.toString() + "\n";
+    }
+    BalRecord[] nonSegmentRecords = context.currentEdiRecords.toArray();
+    foreach BalRecord rec in nonSegmentRecords {
         recordsString += rec.toString() + "\n";
     }
 
