@@ -1,0 +1,4603 @@
+{
+    "name": "Procurement_Notices",
+    "delimiters": {
+      "segment": "~",
+      "field": "*",
+      "component": "",
+      "subcomponent": "NOT_USED",
+      "repetition": "NOT_USED"
+    },
+    "ignoreSegments": [],
+    "preserveEmptyFields": false,
+    "segments": [
+      {
+        "code": "ST",
+        "tag": "Transaction_Set_Header",
+        "truncatable": true,
+        "minOccurances": 1,
+        "maxOccurances": 1,
+        "fields": [
+          {
+            "tag": "Transaction_Set_Identifier_Code",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Transaction_Set_Control_Number",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Implementation_Convention_Reference",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          }
+        ]
+      },
+      {
+        "code": "BCO",
+        "tag": "Beginning_Segment_for_Procurement_Notices",
+        "truncatable": true,
+        "minOccurances": 1,
+        "maxOccurances": 1,
+        "fields": [
+          {
+            "tag": "Transaction_Set_Purpose_Code",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Request_for_Quote_Reference_Number",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Date",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Reference_Identification",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Contract_Status_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Date_1",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Date_2",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Acknowledgment_Type",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Reference_Identification_Qualifier",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Reference_Identification_1",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Transaction_Type_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Action_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          }
+        ]
+      },
+      {
+        "code": "ITD",
+        "tag": "Terms_of_Sale_Deferred_Terms_of_Sale",
+        "truncatable": true,
+        "minOccurances": 0,
+        "maxOccurances": 5,
+        "fields": [
+          {
+            "tag": "Terms_Type_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Terms_Basis_Date_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Terms_Discount_Percent",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Terms_Discount_Due_Date",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Terms_Discount_Days_Due",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "int",
+            "components": []
+          },
+          {
+            "tag": "Terms_Net_Due_Date",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Terms_Net_Days",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "int",
+            "components": []
+          },
+          {
+            "tag": "Terms_Discount_Amount",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Terms_Deferred_Due_Date",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Deferred_Amount_Due",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Percent_of_Invoice_Payable",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Description",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Day_of_Month",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "int",
+            "components": []
+          },
+          {
+            "tag": "Payment_Method_Type_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Percentage_as_Decimal",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          }
+        ]
+      },
+      {
+        "code": "CTB",
+        "tag": "Restrictions_Conditions",
+        "truncatable": true,
+        "minOccurances": 0,
+        "maxOccurances": 5,
+        "fields": [
+          {
+            "tag": "Restrictions_Conditions_Qualifier",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Description",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Quantity_Qualifier",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Quantity",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Amount_Qualifier_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Amount",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Composite_Unit_of_Measure",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "composite",
+            "components": [
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code",
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code_1",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent_1",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier_1",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code_2",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent_2",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier_2",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code_3",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent_3",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier_3",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code_4",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent_4",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier_4",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "CTP",
+        "tag": "Pricing_Information",
+        "truncatable": true,
+        "minOccurances": 0,
+        "maxOccurances": 25,
+        "fields": [
+          {
+            "tag": "Class_of_Trade_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Price_Identifier_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Unit_Price",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Quantity",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Composite_Unit_of_Measure",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "composite",
+            "components": [
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code",
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code_1",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent_1",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier_1",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code_2",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent_2",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier_2",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code_3",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent_3",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier_3",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code_4",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent_4",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier_4",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              }
+            ]
+          },
+          {
+            "tag": "Price_Multiplier_Qualifier",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Multiplier",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Monetary_Amount",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Basis_of_Unit_Price_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Condition_Value",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Multiple_Price_Quantity",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "int",
+            "components": []
+          }
+        ]
+      },
+      {
+        "code": "FOB",
+        "tag": "F_O_B__Related_Instructions",
+        "truncatable": true,
+        "minOccurances": 0,
+        "maxOccurances": 1,
+        "fields": [
+          {
+            "tag": "Shipment_Method_of_Payment",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Location_Qualifier",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Description",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Transportation_Terms_Qualifier_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Transportation_Terms_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Location_Qualifier_1",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Description_1",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Risk_of_Loss_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Description_2",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          }
+        ]
+      },
+      {
+        "code": "AMT",
+        "tag": "Monetary_Amount_Information",
+        "truncatable": true,
+        "minOccurances": 0,
+        "maxOccurances": -1,
+        "fields": [
+          {
+            "tag": "Amount_Qualifier_Code",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Monetary_Amount",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Credit_Debit_Flag_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          }
+        ]
+      },
+      {
+        "code": "QTY",
+        "tag": "Quantity_Information",
+        "truncatable": true,
+        "minOccurances": 0,
+        "maxOccurances": -1,
+        "fields": [
+          {
+            "tag": "Quantity_Qualifier",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Quantity",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Composite_Unit_of_Measure",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "composite",
+            "components": [
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code",
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code_1",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent_1",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier_1",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code_2",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent_2",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier_2",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code_3",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent_3",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier_3",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code_4",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Exponent_4",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              },
+              {
+                "tag": "Multiplier_4",
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "subcomponents": []
+              }
+            ]
+          },
+          {
+            "tag": "Free_form_Information",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          }
+        ]
+      },
+      {
+        "code": "DTM",
+        "tag": "Date_Time_Reference",
+        "truncatable": true,
+        "minOccurances": 0,
+        "maxOccurances": -1,
+        "fields": [
+          {
+            "tag": "Date_Time_Qualifier",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Date",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Time",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Time_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Date_Time_Period_Format_Qualifier",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Date_Time_Period",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          }
+        ]
+      },
+      {
+        "code": "LDT",
+        "tag": "Lead_Time",
+        "truncatable": true,
+        "minOccurances": 0,
+        "maxOccurances": -1,
+        "fields": [
+          {
+            "tag": "Lead_Time_Code",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Quantity",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "float",
+            "components": []
+          },
+          {
+            "tag": "Unit_of_Time_Period_or_Interval",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Date",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          }
+        ]
+      },
+      {
+        "code": "PWK",
+        "tag": "Paperwork",
+        "truncatable": true,
+        "minOccurances": 0,
+        "maxOccurances": -1,
+        "fields": [
+          {
+            "tag": "Report_Type_Code",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Report_Transmission_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Report_Copies_Needed",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "int",
+            "components": []
+          },
+          {
+            "tag": "Entity_Identifier_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Identification_Code_Qualifier",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Identification_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Description",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Actions_Indicated",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "composite",
+            "components": [
+              {
+                "tag": "Paperwork_Report_Action_Code",
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Paperwork_Report_Action_Code_1",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Paperwork_Report_Action_Code_2",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Paperwork_Report_Action_Code_3",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              },
+              {
+                "tag": "Paperwork_Report_Action_Code_4",
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "subcomponents": []
+              }
+            ]
+          },
+          {
+            "tag": "Request_Category_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          }
+        ]
+      },
+      {
+        "code": "MTX",
+        "tag": "Text",
+        "truncatable": true,
+        "minOccurances": 0,
+        "maxOccurances": -1,
+        "fields": [
+          {
+            "tag": "Note_Reference_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Textual_Data",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Textual_Data_1",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Printer_Carriage_Control_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          },
+          {
+            "tag": "Number",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "int",
+            "components": []
+          },
+          {
+            "tag": "Language_Code",
+            "repeat": false,
+            "required": false,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          }
+        ]
+      },
+      {
+        "tag": "N1_Loop",
+        "minOccurances": 0,
+        "maxOccurances": -1,
+        "segments": [
+          {
+            "code": "N1",
+            "tag": "Party_Identification",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": 1,
+            "fields": [
+              {
+                "tag": "Entity_Identifier_Code",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Name",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Identification_Code_Qualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Identification_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Entity_Relationship_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Entity_Identifier_Code_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "N2",
+            "tag": "Additional_Name_Information",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": 2,
+            "fields": [
+              {
+                "tag": "Name",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Name_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "N3",
+            "tag": "Party_Location",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": 2,
+            "fields": [
+              {
+                "tag": "Address_Information",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Address_Information_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "N4",
+            "tag": "Geographic_Location",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": 1,
+            "fields": [
+              {
+                "tag": "City_Name",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "State_or_Province_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Postal_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Country_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Location_Qualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Location_Identifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Country_Subdivision_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "REF",
+            "tag": "Reference_Information",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "fields": [
+              {
+                "tag": "Reference_Identification_Qualifier",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Reference_Identification",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Description",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Reference_Identifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "composite",
+                "components": [
+                  {
+                    "tag": "Reference_Identification_Qualifier",
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Reference_Identification",
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Reference_Identification_Qualifier_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Reference_Identification_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Reference_Identification_Qualifier_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Reference_Identification_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "PER",
+            "tag": "Administrative_Communications_Contact",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "fields": [
+              {
+                "tag": "Contact_Function_Code",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Name",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Communication_Number_Qualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Communication_Number",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Communication_Number_Qualifier_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Communication_Number_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Communication_Number_Qualifier_2",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Communication_Number_2",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Contact_Inquiry_Reference",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "FOB",
+            "tag": "F_O_B__Related_Instructions_1",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": 1,
+            "fields": [
+              {
+                "tag": "Shipment_Method_of_Payment",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Location_Qualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Description",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Transportation_Terms_Qualifier_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Transportation_Terms_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Location_Qualifier_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Description_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Risk_of_Loss_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Description_2",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "LM_Loop",
+        "minOccurances": 0,
+        "maxOccurances": -1,
+        "segments": [
+          {
+            "code": "LM",
+            "tag": "Code_Source_Information",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": 1,
+            "fields": [
+              {
+                "tag": "Agency_Qualifier_Code",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Source_Subqualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "LQ",
+            "tag": "Industry_Code_Identification",
+            "truncatable": true,
+            "minOccurances": 1,
+            "maxOccurances": -1,
+            "fields": [
+              {
+                "tag": "Code_List_Qualifier_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Industry_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "PO1_Loop",
+        "minOccurances": 0,
+        "maxOccurances": -1,
+        "segments": [
+          {
+            "code": "PO1",
+            "tag": "Baseline_Item_Data",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": 1,
+            "fields": [
+              {
+                "tag": "Assigned_Identification",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Quantity",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Unit_Price",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Basis_of_Unit_Price_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_Qualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_Qualifier_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_Qualifier_2",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_2",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_Qualifier_3",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_3",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_Qualifier_4",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_4",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_Qualifier_5",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_5",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_Qualifier_6",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_6",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_Qualifier_7",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_7",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_Qualifier_8",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_8",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_Qualifier_9",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_9",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "PO3",
+            "tag": "Additional_Item_Detail",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "fields": [
+              {
+                "tag": "Change_Reason_Code",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Date",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Price_Identifier_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Unit_Price",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Basis_of_Unit_Price_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Quantity",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Unit_or_Basis_for_Measurement_Code",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Description",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "CTP",
+            "tag": "Pricing_Information_1",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "fields": [
+              {
+                "tag": "Class_of_Trade_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Price_Identifier_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Unit_Price",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Quantity",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Composite_Unit_of_Measure",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "composite",
+                "components": [
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code",
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  }
+                ]
+              },
+              {
+                "tag": "Price_Multiplier_Qualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Multiplier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Monetary_Amount",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Basis_of_Unit_Price_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Condition_Value",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Multiple_Price_Quantity",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "int",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "PID",
+            "tag": "Product_Item_Description",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "fields": [
+              {
+                "tag": "Item_Description_Type",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Process_Characteristic_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Agency_Qualifier_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Description_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Description",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Surface_Layer_Position_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Source_Subqualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Yes_No_Condition_or_Response_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Language_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "SI",
+            "tag": "Service_Characteristic_Identification",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "fields": [
+              {
+                "tag": "Agency_Qualifier_Code",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Service_Characteristics_Qualifier",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Service_Characteristics_Qualifier_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Service_Characteristics_Qualifier_2",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_2",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Service_Characteristics_Qualifier_3",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_3",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Service_Characteristics_Qualifier_4",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_4",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Service_Characteristics_Qualifier_5",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_5",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Service_Characteristics_Qualifier_6",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_6",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Service_Characteristics_Qualifier_7",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_7",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Service_Characteristics_Qualifier_8",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_8",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Service_Characteristics_Qualifier_9",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Product_Service_ID_9",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "MEA",
+            "tag": "Measurements",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "fields": [
+              {
+                "tag": "Measurement_Reference_ID_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Measurement_Qualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Measurement_Value",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Composite_Unit_of_Measure",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "composite",
+                "components": [
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code",
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  }
+                ]
+              },
+              {
+                "tag": "Range_Minimum",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Range_Maximum",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Measurement_Significance_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Measurement_Attribute_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Surface_Layer_Position_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Measurement_Method_or_Device",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Code_List_Qualifier_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Industry_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "PWK",
+            "tag": "Paperwork_1",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "fields": [
+              {
+                "tag": "Report_Type_Code",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Report_Transmission_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Report_Copies_Needed",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "int",
+                "components": []
+              },
+              {
+                "tag": "Entity_Identifier_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Identification_Code_Qualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Identification_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Description",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Actions_Indicated",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "composite",
+                "components": [
+                  {
+                    "tag": "Paperwork_Report_Action_Code",
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Paperwork_Report_Action_Code_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Paperwork_Report_Action_Code_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Paperwork_Report_Action_Code_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Paperwork_Report_Action_Code_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  }
+                ]
+              },
+              {
+                "tag": "Request_Category_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "PER",
+            "tag": "Administrative_Communications_Contact_1",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "fields": [
+              {
+                "tag": "Contact_Function_Code",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Name",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Communication_Number_Qualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Communication_Number",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Communication_Number_Qualifier_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Communication_Number_1",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Communication_Number_Qualifier_2",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Communication_Number_2",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Contact_Inquiry_Reference",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "ITD",
+            "tag": "Terms_of_Sale_Deferred_Terms_of_Sale_1",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": 1,
+            "fields": [
+              {
+                "tag": "Terms_Type_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Terms_Basis_Date_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Terms_Discount_Percent",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Terms_Discount_Due_Date",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Terms_Discount_Days_Due",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "int",
+                "components": []
+              },
+              {
+                "tag": "Terms_Net_Due_Date",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Terms_Net_Days",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "int",
+                "components": []
+              },
+              {
+                "tag": "Terms_Discount_Amount",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Terms_Deferred_Due_Date",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Deferred_Amount_Due",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Percent_of_Invoice_Payable",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Description",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Day_of_Month",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "int",
+                "components": []
+              },
+              {
+                "tag": "Payment_Method_Type_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Percentage_as_Decimal",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "DTM",
+            "tag": "Date_Time_Reference_1",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": 10,
+            "fields": [
+              {
+                "tag": "Date_Time_Qualifier",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Date",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Time",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Time_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Date_Time_Period_Format_Qualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Date_Time_Period",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "CTB",
+            "tag": "Restrictions_Conditions_1",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": 1,
+            "fields": [
+              {
+                "tag": "Restrictions_Conditions_Qualifier",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Description",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Quantity_Qualifier",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Quantity",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Amount_Qualifier_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Amount",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Composite_Unit_of_Measure",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "composite",
+                "components": [
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code",
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "code": "QTY",
+            "tag": "Quantity_Information_1",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "fields": [
+              {
+                "tag": "Quantity_Qualifier",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Quantity",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Composite_Unit_of_Measure",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "composite",
+                "components": [
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code",
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_1",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_2",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_3",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Unit_or_Basis_for_Measurement_Code_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Exponent_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  },
+                  {
+                    "tag": "Multiplier_4",
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "subcomponents": []
+                  }
+                ]
+              },
+              {
+                "tag": "Free_form_Information",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "code": "AMT",
+            "tag": "Monetary_Amount_Information_1",
+            "truncatable": true,
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "fields": [
+              {
+                "tag": "Amount_Qualifier_Code",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              },
+              {
+                "tag": "Monetary_Amount",
+                "repeat": false,
+                "required": true,
+                "truncatable": true,
+                "dataType": "float",
+                "components": []
+              },
+              {
+                "tag": "Credit_Debit_Flag_Code",
+                "repeat": false,
+                "required": false,
+                "truncatable": true,
+                "dataType": "string",
+                "components": []
+              }
+            ]
+          },
+          {
+            "tag": "REF_Loop",
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "segments": [
+              {
+                "code": "REF",
+                "tag": "Reference_Information_1",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": 1,
+                "fields": [
+                  {
+                    "tag": "Reference_Identification_Qualifier",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Reference_Identification",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Description",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Reference_Identifier",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "composite",
+                    "components": [
+                      {
+                        "tag": "Reference_Identification_Qualifier",
+                        "required": true,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Reference_Identification",
+                        "required": true,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Reference_Identification_Qualifier_1",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Reference_Identification_1",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Reference_Identification_Qualifier_2",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Reference_Identification_2",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "DTM",
+                "tag": "Date_Time_Reference_2",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": -1,
+                "fields": [
+                  {
+                    "tag": "Date_Time_Qualifier",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Date",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Time",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Time_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Date_Time_Period_Format_Qualifier",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Date_Time_Period",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "SLN_Loop",
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "segments": [
+              {
+                "code": "SLN",
+                "tag": "Subline_Item_Detail",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": 1,
+                "fields": [
+                  {
+                    "tag": "Assigned_Identification",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Assigned_Identification_1",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Relationship_Code",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Quantity",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "components": []
+                  },
+                  {
+                    "tag": "Composite_Unit_of_Measure",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "composite",
+                    "components": [
+                      {
+                        "tag": "Unit_or_Basis_for_Measurement_Code",
+                        "required": true,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Exponent",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "float",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Multiplier",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "float",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Unit_or_Basis_for_Measurement_Code_1",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Exponent_1",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "float",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Multiplier_1",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "float",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Unit_or_Basis_for_Measurement_Code_2",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Exponent_2",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "float",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Multiplier_2",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "float",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Unit_or_Basis_for_Measurement_Code_3",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Exponent_3",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "float",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Multiplier_3",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "float",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Unit_or_Basis_for_Measurement_Code_4",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Exponent_4",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "float",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Multiplier_4",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "float",
+                        "subcomponents": []
+                      }
+                    ]
+                  },
+                  {
+                    "tag": "Unit_Price",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "components": []
+                  },
+                  {
+                    "tag": "Basis_of_Unit_Price_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Relationship_Code_1",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_Qualifier",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_Qualifier_1",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_1",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_Qualifier_2",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_2",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_Qualifier_3",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_3",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_Qualifier_4",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_4",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_Qualifier_5",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_5",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_Qualifier_6",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_6",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_Qualifier_7",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_7",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_Qualifier_8",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_8",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_Qualifier_9",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Service_ID_9",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              },
+              {
+                "code": "PID",
+                "tag": "Product_Item_Description_1",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": -1,
+                "fields": [
+                  {
+                    "tag": "Item_Description_Type",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Process_Characteristic_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Agency_Qualifier_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Product_Description_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Description",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Surface_Layer_Position_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Source_Subqualifier",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Yes_No_Condition_or_Response_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Language_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "N1_Loop_1",
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "segments": [
+              {
+                "code": "N1",
+                "tag": "Party_Identification_1",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": 1,
+                "fields": [
+                  {
+                    "tag": "Entity_Identifier_Code",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Name",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Identification_Code_Qualifier",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Identification_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Entity_Relationship_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Entity_Identifier_Code_1",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              },
+              {
+                "code": "N2",
+                "tag": "Additional_Name_Information_1",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": 2,
+                "fields": [
+                  {
+                    "tag": "Name",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Name_1",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              },
+              {
+                "code": "N3",
+                "tag": "Party_Location_1",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": 2,
+                "fields": [
+                  {
+                    "tag": "Address_Information",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Address_Information_1",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              },
+              {
+                "code": "N4",
+                "tag": "Geographic_Location_1",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": 1,
+                "fields": [
+                  {
+                    "tag": "City_Name",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "State_or_Province_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Postal_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Country_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Location_Qualifier",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Location_Identifier",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Country_Subdivision_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              },
+              {
+                "code": "REF",
+                "tag": "Reference_Information_2",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": -1,
+                "fields": [
+                  {
+                    "tag": "Reference_Identification_Qualifier",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Reference_Identification",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Description",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Reference_Identifier",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "composite",
+                    "components": [
+                      {
+                        "tag": "Reference_Identification_Qualifier",
+                        "required": true,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Reference_Identification",
+                        "required": true,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Reference_Identification_Qualifier_1",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Reference_Identification_1",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Reference_Identification_Qualifier_2",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      },
+                      {
+                        "tag": "Reference_Identification_2",
+                        "required": false,
+                        "truncatable": true,
+                        "dataType": "string",
+                        "subcomponents": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "code": "PER",
+                "tag": "Administrative_Communications_Contact_2",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": -1,
+                "fields": [
+                  {
+                    "tag": "Contact_Function_Code",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Name",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Communication_Number_Qualifier",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Communication_Number",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Communication_Number_Qualifier_1",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Communication_Number_1",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Communication_Number_Qualifier_2",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Communication_Number_2",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Contact_Inquiry_Reference",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              },
+              {
+                "code": "FOB",
+                "tag": "F_O_B__Related_Instructions_2",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": -1,
+                "fields": [
+                  {
+                    "tag": "Shipment_Method_of_Payment",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Location_Qualifier",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Description",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Transportation_Terms_Qualifier_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Transportation_Terms_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Location_Qualifier_1",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Description_1",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Risk_of_Loss_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Description_2",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              },
+              {
+                "code": "DTM",
+                "tag": "Date_Time_Reference_3",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": -1,
+                "fields": [
+                  {
+                    "tag": "Date_Time_Qualifier",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Date",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Time",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Time_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Date_Time_Period_Format_Qualifier",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Date_Time_Period",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              },
+              {
+                "code": "LDT",
+                "tag": "Lead_Time_1",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": -1,
+                "fields": [
+                  {
+                    "tag": "Lead_Time_Code",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Quantity",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "float",
+                    "components": []
+                  },
+                  {
+                    "tag": "Unit_of_Time_Period_or_Interval",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Date",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              },
+              {
+                "code": "MTX",
+                "tag": "Text_1",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": -1,
+                "fields": [
+                  {
+                    "tag": "Note_Reference_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Textual_Data",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Textual_Data_1",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Printer_Carriage_Control_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Number",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "int",
+                    "components": []
+                  },
+                  {
+                    "tag": "Language_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "tag": "LM_Loop_1",
+            "minOccurances": 0,
+            "maxOccurances": -1,
+            "segments": [
+              {
+                "code": "LM",
+                "tag": "Code_Source_Information_1",
+                "truncatable": true,
+                "minOccurances": 0,
+                "maxOccurances": 1,
+                "fields": [
+                  {
+                    "tag": "Agency_Qualifier_Code",
+                    "repeat": false,
+                    "required": true,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Source_Subqualifier",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              },
+              {
+                "code": "LQ",
+                "tag": "Industry_Code_Identification_1",
+                "truncatable": true,
+                "minOccurances": 1,
+                "maxOccurances": -1,
+                "fields": [
+                  {
+                    "tag": "Code_List_Qualifier_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  },
+                  {
+                    "tag": "Industry_Code",
+                    "repeat": false,
+                    "required": false,
+                    "truncatable": true,
+                    "dataType": "string",
+                    "components": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "code": "SE",
+        "tag": "Transaction_Set_Trailer",
+        "truncatable": true,
+        "minOccurances": 1,
+        "maxOccurances": 1,
+        "fields": [
+          {
+            "tag": "Number_of_Included_Segments",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "int",
+            "components": []
+          },
+          {
+            "tag": "Transaction_Set_Control_Number",
+            "repeat": false,
+            "required": true,
+            "truncatable": true,
+            "dataType": "string",
+            "components": []
+          }
+        ]
+      }
+    ]
+  }
