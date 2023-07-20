@@ -16,8 +16,6 @@ public type LibData record {|
     string ediDeserializers = "";
     string ediSerializers = "";
     string[] ediNames = [];
-
-    GenContext genContext = {};
 |};
 
 # Generates a Ballerina library project containing:
@@ -73,72 +71,6 @@ function generateCodeFromSchemas(LibData libdata, string ediVersion, file:MetaDa
         json schemaJson = check io:fileReadJson(schemaFile.absPath);
         check generateEDIFileSpecificCode(ediName, ediVersion, schemaJson, libdata);
     }
-    removeDuplicateRecords(libdata.genContext);
-    check writeRecords(libdata);
-}
-
-function removeDuplicateRecords(GenContext context) {
-    foreach BalRecord sharedRecord in context.sharedNonSegmentRecords {
-        foreach string ediName in context.roots.keys() {
-            map<BalRecord> ediRecords = context.roots.get(ediName).generatedRecords;
-            if ediRecords.hasKey(sharedRecord.name) {
-                _ = ediRecords.remove(sharedRecord.name);
-            }
-        }
-    }
-}
-
-function writeRecords(LibData libdata) returns error? {
-    string segmentsPath = check file:joinPath(libdata.libPath, libdata.libName + "segments.bal");
-    string segmentsString = "";
-    foreach BalRecord rec in libdata.genContext.segmentRecords {
-        segmentsString += rec.toString() + "\n";
-    }
-    check io:fileWriteString(segmentsPath, segmentsString);
-
-    string sharedNSPath = check file:joinPath(libdata.libPath, libdata.libName + "components.bal");
-    string sharedNonSegmentsString = "";
-    foreach BalRecord rec in libdata.genContext.sharedNonSegmentRecords {
-        sharedNonSegmentsString += rec.toString() + "\n";
-    }
-    check io:fileWriteString(sharedNSPath, sharedNonSegmentsString);
-
-    foreach string ediName in libdata.genContext.roots.keys() {
-        string ediRecordsPath = check file:joinPath(libdata.libPath, ediName + ".bal");
-        EdiData? ediData = libdata.genContext.roots[ediName];
-        if ediData == () {
-            return error("EDI data not found for EDI name: " + ediName);
-        }
-        check writeEdiProcessingFile(ediRecordsPath, ediData);
-    }
-}
-
-function writeEdiProcessingFile(string ediPath, EdiData ediData) returns error? {
-    string ediRecordsString = "";
-    map<BalRecord> ediRecords = ediData.generatedRecords;
-    foreach BalRecord rec in ediRecords {
-        ediRecordsString += rec.toString() + "\n";
-    }
-
-    string ediCode = string `
-import ballerina/edi;
-
-public isolated function fromEdi${ediData.ediName}String(string ediText) returns ${ediData.mainRecordName}|error {
-    edi:EdiSchema ediSchema = check edi:getSchema(schema${ediData.ediName}Json);
-    json dataJson = check edi:fromEdiString(ediText, ediSchema);
-    return dataJson.cloneWithType();
-}
-
-public isolated function toEdi${ediData.ediName}String(${ediData.mainRecordName} data) returns string|error {
-    edi:EdiSchema ediSchema = check edi:getSchema(schema${ediData.ediName}Json);
-    return edi:toEdiString(data, ediSchema);    
-}
-
-${ediRecordsString}
-
-final readonly & json schema${ediData.ediName}Json = ${ediData.schema.toJsonString()};
-    `;
-    check io:fileWriteString(ediPath, ediCode);
 }
 
 function createBalLib(LibData libdata) returns error? {
@@ -160,26 +92,27 @@ function copyNonTemplatedFiles(LibData libdata) returns error? {
 
 function generateEDIFileSpecificCode(string ediName, string ediVersion, json mappingJson, LibData libdata) returns error? {
     string completeEdiName = ediVersion == "" ? ediName : ediVersion + "_" + ediName;
-    // string moduleName = ediVersion == "" ? "m" + ediName : "m" + ediVersion + ".m" + ediName;
+    string moduleName = ediVersion == "" ? "m" + ediName : "m" + ediVersion + ".m" + ediName;
     libdata.ediNames.push(completeEdiName);
     edi:EdiSchema ediMapping = check mappingJson.cloneWithType(edi:EdiSchema);
-    ediMapping.name = "edi_" + completeEdiName + "_" + ediMapping.name;
+    ediMapping.name = "EDI_" + completeEdiName + "_" + ediMapping.name;
 
-    // string modulePath = check file:joinPath(libdata.libPath, "modules", moduleName);
-    // check file:createDir(modulePath, file:RECURSIVE);
+    string modulePath = check file:joinPath(libdata.libPath, "modules", moduleName);
+    check file:createDir(modulePath, file:RECURSIVE);
 
-    check generateCodeForSchema(ediName, ediMapping, libdata.genContext);
+    string recordsPath = check file:joinPath(modulePath, "G_" + ediName + ".bal");
+    check generateCodeForSchema(ediMapping, recordsPath);
 
-    // string transformer = generateTransformerCode(ediName, ediMapping.name);
-    // check io:fileWriteString(check file:joinPath(modulePath, "transformer.bal"), transformer);
+    string transformer = generateTransformerCode(ediName, ediMapping.name);
+    check io:fileWriteString(check file:joinPath(modulePath, "transformer.bal"), transformer);
 
-    // libdata.importsBlock += "\n" + string `import ${libdata.libName}.${moduleName};`;
-    // libdata.exportsBlock += ",\"" + libdata.libName + "." + moduleName + "\"";
+    libdata.importsBlock += "\n" + string `import ${libdata.libName}.${moduleName};`;
+    libdata.exportsBlock += ",\"" + libdata.libName + "." + moduleName + "\"";
     libdata.enumBlock += string `${libdata.enumBlock.length() > 0 ? ", " : ""}EDI_${completeEdiName} = "${completeEdiName}"`;
-    libdata.ediDeserializers += (libdata.ediDeserializers.length() > 0 ? "\n" : "") +
-        string `    EDI_${ediName} => {return fromEdi${ediName}String(ediText);}`;
-    libdata.ediSerializers += (libdata.ediSerializers.length() > 0 ? "\n" : "") +
-        string `    EDI_${ediName} => {return toEdi${ediName}String(check data.ensureType());}`;
+    libdata.ediDeserializers += (libdata.ediDeserializers.length() > 0 ? ",\n" : "") +
+        string `    "${completeEdiName}": ${moduleName}:transformFromEdiString`;
+    libdata.ediSerializers += (libdata.ediSerializers.length() > 0 ? ",\n" : "") +
+        string `    "${completeEdiName}": ${moduleName}:transformToEdiString`;
 }
 
 function writeLibFile(string content, string targetName, LibData libdata) returns error? {

@@ -5,6 +5,6 @@ org = "${libdata.orgName}"
 name = "${libdata.libName}"
 version = "0.1.0"
 distribution = "2201.5.0"
-export=["${libdata.libName}"]
+export=[${libdata.exportsBlock}]
 `;
 }
